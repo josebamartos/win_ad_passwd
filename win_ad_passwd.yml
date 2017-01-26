@@ -1,0 +1,11 @@
+- hosts: all
+
+  vars:
+      usr: "CN=Manager,CN=Users,DC=comware,DC=com,DC=co"
+      pwd: "password"
+
+  tasks:
+    - name: Change user password
+      win_ad_passwd:
+          usr: "{{ usr }}"
+          pwd: "{{ pwd }}"
